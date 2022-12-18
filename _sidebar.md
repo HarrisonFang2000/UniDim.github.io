@@ -1,7 +1,7 @@
 <!-- _sidebar.md -->
 
-* Typora+Docsify使用指南
-  * [Docsify使用指南](/ProjectDocs/Docsify使用指南.md) ` <!--注意这里是相对路径-->`
-  * [Typora+Docsify快速入门](/ProjectDocs/Typora+Docsify快速入门.md)
-* Docsify部署
-  * [Docsify部署教程](/ProjectDocs/Docsify部署教程.md)
+* 故事会
+  * [乌鸦喝水](ProjectDocs\故事会\乌鸦喝水.md)
+* 技术共享
+  * Code
+  * - [git使用教程](ProjectDocs\Code\Git\00-Git使用教程.md)
