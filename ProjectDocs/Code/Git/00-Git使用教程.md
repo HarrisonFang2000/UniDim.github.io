@@ -1,6 +1,6 @@
-### **总结一下git的使用流程：**
+# **Git的使用流程的总结**
 
-### **什么是git :**Git是目前世界上最先进的分布式版本控制系统
+## **Git是什么:**Git是目前世界上最先进的分布式版本控制系统
 
 **工作区：Workspace**
 
@@ -10,43 +10,40 @@
 
 **远程仓库：Remote**
 
-### **一：使用git提交代码到版本库的步骤：**
+## **一：使用git提交代码到版本库的步骤：**
 
-```csharp
+```md
 第一步：使用 git add 文件名（多个文件中间用空格隔开），这个其实是将文件添加到了暂存区。
+例如：git add test1.php test2.php （提交多个文件到暂存区）
 ```
 
-```csharp
-例如：git add test1.php test2.php    （提交多个文件到暂存区）
+```md
+第二步：使用 git commit  -m '备注' ，这个其实是将暂存区的文件提交到当前分支上。
 ```
 
-```sql
-第二步：使用 git commit  -m '备注'   ，这个其实是将暂存区的文件提交到当前分支上。
+```md
+第三步：git pull origin 远程分支      【拉去远程的最新代码】
 ```
 
-```mipsasm
-第三步：git pull origin 远程分支        【拉去远程的最新代码】
+```md
+第四步：git push origin 远程分支     【提交本地仓库代码到远程仓库】
 ```
 
-```perl
-第四步：git push origin 远程分支      【提交本地仓库代码到远程仓库】
-```
-
-## **接下来进行一个demo操作：**
+### **接下来进行一个demo操作：**
 
 ### 添加 test1.php test2.php 到当前的暂存区里面：
 
-```csharp
-git add 文件一     文件二
+```md
+git add 文件一  文件二
 ```
 
-**注意：⚠️如果想撤销已经add的文件，操作如下：【 --hard 撤销已经add的文件，直接回退到上一次commit是版本】**
+> 注意：⚠️如果想撤销已经add的文件，操作如下：【 --hard 撤销已经add的文件，直接回退到上一次commit版本】
 
-**git status 查看一下提交的状态，其中前面绿色的是已经add过的文件**
-
-**git reset --hard HEAD 是把所有add的文件都撤销**
-
-**git reset --hard  目录/撤销的文件   是把某个文件撤销**
+>`git status` 查看一下提交的状态，其中前面绿色的是已经add过的文件
+>
+>`git reset --hard HEAD` 是把所有add的文件都撤销
+>
+>`git reset --hard`  目录/撤销的文件是把某个文件撤销
 
 ### **提交暂存区的 test1.php test2.php 文件到本地仓库里面：（-m 后面是提交的备注）**
 
@@ -60,13 +57,13 @@ git commit -m '提交的备注'
 
 **撤回上一次提交的文件：**
 
-**git reset --soft HEAD**
+`git reset --soft HEAD`
 
 **撤销指定版本的提交：**
 
-**git reset --soft 版本号     【例如：**git reset --hard  f16fb64d282ce8a38c64d5d4099dcf184499be00 **】**
+`git reset --soft 版本号`     【例如：`git reset --hard  f16fb64d282ce8a38c64d5d4099dcf184499be00 `】
 
-**如果进行了两次提交，都想撤回，可以使用HEAD~2**
+**如果进行了两次提交，都想撤回，可以使用`HEAD~2`**
 
 #### **查看当前提交的日志：**
 
@@ -84,7 +81,7 @@ git pull origin 远程分支  【拉去远程仓库最新代码】
 git push origin master  【推送本地仓库代码到远程仓库】
 ```
 
-### 二：删除远程仓库的文件或者目录：
+## 二：删除远程仓库的文件或者目录：
 
 **1.指定目录下的文件：**
 
@@ -104,9 +101,9 @@ git  rm   -r --cached  目录     【例如：git rm -r --cached  test 
 git push 
 ```
 
-```shell
-一、新建代码库
+## 一、新建代码库
 
+```shell
 # 在当前目录新建一个Git代码库
 $ git init
 # 新建一个目录，将其初始化为Git代码库
@@ -115,8 +112,9 @@ $ git init [project-name]
 $ git clone [url]
 ```
 
+## 二、配置
+
 ```ruby
-二、配置
 
 # 显示当前的Git配置
 $ git config --list
@@ -129,8 +127,9 @@ $ git config [--global] user.name "[name]"
 $ git config [--global] user.email "[email address]"
 ```
 
+## 三、增加/删除文件
+
 ```shell
-三、增加/删除文件
 
 # 添加指定文件到暂存区
 $ git add [file1] [file2] ...
@@ -155,8 +154,9 @@ $ git rm --cached [file]
 $ git mv [file-original] [file-renamed]
 ```
 
+## 四、代码提交
+
 ```ruby
-四、代码提交
 
 # 提交暂存区到仓库区
 $ git commit -m [message]
@@ -178,8 +178,9 @@ $ git commit --amend -m [message]
 $ git commit --amend [file1] [file2] ...
 ```
 
+## 五、分支
+
 ```shell
-五、分支
 
 # 列出所有本地分支
 $ git branch
@@ -214,8 +215,9 @@ $ git branch -dr [remote/branch]
 $ git branch -M main
 ```
 
+## 六、标签
+
 ```ruby
-六、标签
 
 # 列出所有tag
 $ git tag
@@ -245,8 +247,9 @@ $ git push [remote] --tags
 $ git checkout -b [branch] [tag]
 ```
 
+## 七、查看信息
+
 ```shell
-七、查看信息
 
 # 显示有变更的文件
 $ git status
@@ -291,8 +294,9 @@ $ git show [commit]:[filename]
 $ git reflog
 ```
 
+## 八、远程同步
+
 ```ruby
-八、远程同步
 
 # 下载远程仓库的所有变动
 $ git fetch [remote]
@@ -319,8 +323,9 @@ $ git push [remote] --force
 $ git push [remote] --all
 ```
 
+## 九、撤销
+
 ```ruby
-九、撤销
 
 # 恢复暂存区的指定文件到工作区
 $ git checkout [file]
@@ -354,6 +359,8 @@ $ git revert [commit]
 $ git stash
 ```
 
+## 回退
+
 ```perl
 撤销已经push的文件例如：
 首先会退版本：git reset --soft xxx(版本号)
@@ -362,7 +369,7 @@ $ git stash
 将代码从暂存区取出：git stash pop
 ```
 
-**提交部分代码：**
+## **提交部分代码：**
 
 ```lua
 git status      //查看仓库状态
@@ -380,6 +387,6 @@ git push      //推送到远程仓库
 git stash pop      //恢复之前忽略的文件(非常重要的一步)
 ```
 
-原文链接：[https://www.cnblogs.com/carver/articles/16633353.html](https://www.cnblogs.com/carver/articles/16633353.html) 
+原文链接：[https://www.cnblogs.com/carver/articles/16633353.html](https://www.cnblogs.com/carver/articles/16633353.html)
 
 标签: #git
