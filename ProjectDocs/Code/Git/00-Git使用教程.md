@@ -39,11 +39,11 @@ git add 文件一  文件二
 
 > 注意：⚠️如果想撤销已经add的文件，操作如下：【 --hard 撤销已经add的文件，直接回退到上一次commit版本】
 
->`git status` 查看一下提交的状态，其中前面绿色的是已经add过的文件
+> `git status` 查看一下提交的状态，其中前面绿色的是已经add过的文件
 >
->`git reset --hard HEAD` 是把所有add的文件都撤销
+> `git reset --hard HEAD` 是把所有add的文件都撤销
 >
->`git reset --hard`  目录/撤销的文件是把某个文件撤销
+> `git reset --hard`  目录/撤销的文件是把某个文件撤销
 
 ### **提交暂存区的 test1.php test2.php 文件到本地仓库里面：（-m 后面是提交的备注）**
 
@@ -63,7 +63,7 @@ git commit -m '提交的备注'
 
 `git reset --soft 版本号`     【例如：`git reset --hard  f16fb64d282ce8a38c64d5d4099dcf184499be00 `】
 
-**如果进行了两次提交，都想撤回，可以使用`HEAD~2`**
+**如果进行了两次提交，都想撤回，可以使用 `HEAD~2`**
 
 #### **查看当前提交的日志：**
 
